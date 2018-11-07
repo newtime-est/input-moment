@@ -20,7 +20,7 @@ class App extends Component {
     console.log('saved', this.state.m.format('llll'));
   };
 
-  handleClickTab = (e, tab) => {
+  handleclicktab = (e, tab) => {
     e.preventDefault();
     this.setState({ tab });
   }
@@ -42,7 +42,8 @@ class App extends Component {
             minStep={5}
             onSave={this.handleSave}
             tab={this.state.tab}
-            handleClickTab={(e, tab) => {this.handleClickTab(e, tab)}}
+            handleclicktab={(e, tab) => {this.handleclicktab(e, tab)}}
+            savebuttonlabel={'close it down'}
           />
         </form>
       </div>
