@@ -1,4 +1,4 @@
-# !!! Modified package. Froked from https://github.com/wangzuo/input-moment !!!
+# Input moment forked from [wangzuo/input-moment](https://github.com/wangzuo/input-moment)
 
 # input-moment 
 [![npm](https://img.shields.io/npm/v/input-moment.svg)](https://www.npmjs.com/package/input-moment)
@@ -14,7 +14,7 @@ The icon is from [ionicons](http://ionicons.com/).
 
 ### Installation
 ``` sh
-npm i input-moment --save
+npm i newtime-input-moment-extended --save
 ```
 
 **Notice:** This module requires [moment](https://www.npmjs.com/package/moment) as a [peerDependency](https://docs.npmjs.com/files/package.json#peerdependencies).
