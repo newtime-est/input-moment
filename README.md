@@ -1,7 +1,10 @@
+# !!! Modified package. Froked from https://github.com/wangzuo/input-moment !!!
+
 # input-moment 
 [![npm](https://img.shields.io/npm/v/input-moment.svg)](https://www.npmjs.com/package/input-moment)
 [![Build Status](https://travis-ci.org/wangzuo/input-moment.svg?branch=master)](https://travis-ci.org/wangzuo/input-moment)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
 
 React datetime picker powered by [momentjs](http://momentjs.com)
 

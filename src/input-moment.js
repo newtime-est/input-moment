@@ -9,16 +9,9 @@ export default class InputMoment extends Component {
     prevMonthIcon: 'ion-ios-arrow-left',
     nextMonthIcon: 'ion-ios-arrow-right',
     minStep: 1,
-    hourStep: 1
-  };
-
-  state = {
-    tab: 0
-  };
-
-  handleClickTab = (e, tab) => {
-    e.preventDefault();
-    this.setState({ tab: tab });
+    hourStep: 1,
+    tab: 0,
+    handleClickTab: null
   };
 
   handleSave = e => {
@@ -27,7 +20,7 @@ export default class InputMoment extends Component {
   };
 
   render() {
-    const { tab } = this.state;
+    const { tab } = this.props;
     const {
       moment: m,
       className,
@@ -46,14 +39,14 @@ export default class InputMoment extends Component {
           <button
             type="button"
             className={cx('ion-calendar im-btn', { 'is-active': tab === 0 })}
-            onClick={e => this.handleClickTab(e, 0)}
+            onClick={e => this.props.handleClickTab(e, 0)}
           >
             Date
           </button>
           <button
             type="button"
             className={cx('ion-clock im-btn', { 'is-active': tab === 1 })}
-            onClick={e => this.handleClickTab(e, 1)}
+            onClick={e => this.props.handleClickTab(e, 1)}
           >
             Time
           </button>

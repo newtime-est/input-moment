@@ -8,7 +8,8 @@ import packageJson from '../package.json';
 
 class App extends Component {
   state = {
-    m: moment()
+    m: moment(),
+    tab: 0
   };
 
   handleChange = m => {
@@ -18,6 +19,11 @@ class App extends Component {
   handleSave = () => {
     console.log('saved', this.state.m.format('llll'));
   };
+
+  handleClickTab = (e, tab) => {
+    e.preventDefault();
+    this.setState({ tab });
+  }
 
   render() {
     return (
@@ -35,6 +41,8 @@ class App extends Component {
             onChange={this.handleChange}
             minStep={5}
             onSave={this.handleSave}
+            tab={this.state.tab}
+            handleClickTab={(e, tab) => {this.handleClickTab(e, tab)}}
           />
         </form>
       </div>
