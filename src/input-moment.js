@@ -24,16 +24,18 @@ export default class InputMoment extends Component {
     const { tab } = this.props;
     const {
       moment: m,
-      className,
-      prevMonthIcon,
-      nextMonthIcon,
-      minStep,
-      hourStep,
-      onSave,
-      ...props
+      className
     } = this.props;
-    const cls = cx('m-input-moment', className);
 
+    const props = {
+      prevmonthicon: this.props.prevMonthIcon,
+      nextmonthicon: this.props.nextMonthIcon,
+      minstep: this.props.minStep,
+      hourstep: this.props.hourStep,
+    }
+    
+    const cls = cx('m-input-moment', className);
+    
     return (
       <div className={cls} {...props}>
         <div className="options">
