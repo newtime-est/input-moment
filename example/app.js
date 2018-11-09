@@ -13,6 +13,7 @@ class App extends Component {
   };
 
   handleChange = m => {
+    console.log(m);
     this.setState({ m });
   };
 

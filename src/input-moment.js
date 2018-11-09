@@ -15,10 +15,27 @@ export default class InputMoment extends Component {
     savebuttonlabel: 'Save'
   };
 
+  
+  constructor(props) {
+    super();
+    
+    this.state = {
+      m: props.moment
+    };
+
+    this.onMonthChange = this.onMonthChange.bind(this);
+  }
+
   handleSave = e => {
     e.preventDefault();
     if (this.props.onSave) this.props.onSave();
   };
+
+  onMonthChange(val) {
+    this.setState({
+      m: val
+    })
+  }
 
   render() {
     const { tab } = this.props;
@@ -58,10 +75,11 @@ export default class InputMoment extends Component {
         <div className="tabs">
           <Calendar
             className={cx('tab', { 'is-active': tab === 0 })}
-            moment={m}
+            moment={this.state.m}
             onChange={this.props.onChange}
             prevMonthIcon={this.props.prevMonthIcon}
             nextMonthIcon={this.props.nextMonthIcon}
+            onMonthChange={this.onMonthChange}
           />
           <Time
             className={cx('tab', { 'is-active': tab === 1 })}
