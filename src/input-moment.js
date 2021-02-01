@@ -17,6 +17,7 @@ export default class InputMoment extends Component {
     minutesLabel: 'Minutes',
     dateLabel: 'Date',
     timeLabel: 'Time',
+    currentLanguage: 'en'
   };
 
 
@@ -84,6 +85,7 @@ export default class InputMoment extends Component {
             prevMonthIcon={this.props.prevMonthIcon}
             nextMonthIcon={this.props.nextMonthIcon}
             onMonthChange={this.onMonthChange}
+            currentLanguage={this.props.currentLanguage}
           />
           <Time
             className={cx('tab', { 'is-active': tab === 1 })}

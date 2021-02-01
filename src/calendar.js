@@ -42,6 +42,7 @@ export default class Calendar extends Component {
 
   render() {
     const m = this.props.moment;
+    const lang = this.props.currentLanguage;
     const d = m.date();
     const d1 = m.clone().subtract(1, 'month').endOf('month').date();
     const d2 = m.clone().date(1).day();
@@ -51,7 +52,12 @@ export default class Calendar extends Component {
       range(1, d3 + 1),
       range(1, 42 - d3 - d2 + 1)
     );
-    const weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    const weeksByLang = {
+      en: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      ru: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      et: ['P', 'E', 'T', 'K', 'N', 'R', 'L'],
+    }
 
     return (
       <div className={cx('m-calendar', this.props.className)}>
@@ -68,7 +74,7 @@ export default class Calendar extends Component {
         <table>
           <thead>
             <tr>
-              {weeks.map((w, i) => <td key={i}>{w}</td>)}
+              {weeksByLang[lang].map((w, i) => <td key={i}>{w}</td>)}
             </tr>
           </thead>
 
