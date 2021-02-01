@@ -12,13 +12,17 @@ export default class InputMoment extends Component {
     hourStep: 1,
     tab: 0,
     handleclicktab: null,
-    savebuttonlabel: 'Save'
+    savebuttonlabel: 'Save',
+    hoursLabel: 'Hours',
+    minutesLabel: 'Minutes',
+    dateLabel: 'Date',
+    timeLabel: 'Time',
   };
 
-  
+
   constructor(props) {
     super();
-    
+
     this.state = {
       m: props.moment
     };
@@ -50,9 +54,9 @@ export default class InputMoment extends Component {
       minstep: this.props.minStep,
       hourstep: this.props.hourStep,
     }
-    
+
     const cls = cx('m-input-moment', className);
-    
+
     return (
       <div className={cls} {...props}>
         <div className="options">
@@ -61,14 +65,14 @@ export default class InputMoment extends Component {
             className={cx('ion-calendar im-btn', { 'is-active': tab === 0 })}
             onClick={e => this.props.handleclicktab(e, 0)}
           >
-            Date
+            {this.props.dateLabel}
           </button>
           <button
             type="button"
             className={cx('ion-clock im-btn', { 'is-active': tab === 1 })}
             onClick={e => this.props.handleclicktab(e, 1)}
           >
-            Time
+            {this.props.timeLabel}
           </button>
         </div>
 
@@ -87,6 +91,8 @@ export default class InputMoment extends Component {
             minStep={this.props.minStep}
             hourStep={this.props.hourStep}
             onChange={this.props.onChange}
+            hoursLabel={this.props.hoursLabel}
+            minutesLabel={this.props.minutesLabel}
           />
         </div>
 
